@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaEntidad;
 using System.Data;
 using System.Data.SqlClient;
-
+using CapaEntidad;
 
 namespace CapaDatos
 {
-   public class CDMenu
+    public class CDMenu
     {
-
         Conexion objConexion = new Conexion();
         SqlCommand objCommand = new SqlCommand();
         public bool guardarMenu(CEMenu oMenu)
@@ -27,7 +25,7 @@ namespace CapaDatos
                 objCommand.Parameters.AddWithValue("@identificador_plato", oMenu.Identificador_plato);
                 objCommand.Parameters.AddWithValue("@precio_menu", oMenu.Precio_menu);
                 objCommand.Parameters.AddWithValue("@comentario_menu", oMenu.Comentario_menu);
-               
+
 
                 objCommand.ExecuteNonQuery();
                 return true;
@@ -102,9 +100,5 @@ namespace CapaDatos
                 throw;
             }
         }
-
-
     }
-
 }
-
